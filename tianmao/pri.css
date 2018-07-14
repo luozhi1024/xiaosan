@@ -103,4 +103,60 @@
     display: block;
 }
 
+#logo-search .logo {
+    float: left;
 
+}
+.logo img{
+    width: 240px;
+}
+
+.search-box {
+    border: 2px solid;
+    border-color: #FF0036;
+    border-width: 2px;
+}
+ .search-box input{
+     width: 483px;
+     height: 26px;
+     border: 0px;
+     outline: none;
+     text-indent: 5px;
+
+}
+ .search-box button{
+     width: 132px;
+     height: 36px;
+     background: #FF0036;
+     color: #fff;
+     border: 0px;
+     font-weight: bold;
+     font-size: 14px;
+ }
+#logo-search .search{
+    float: left;
+}
+ .hot {
+    float: left;
+    border-right: 10px solid;
+    border-top: 10px;
+    border-width: 1px;
+    color: #cccccc;
+}
+.search .hot-query ul{
+    margin-top: 10px;
+}
+.search .hot a{
+    color: #cccccc;
+}
+.search .highlight a{
+    color: #FF0036;
+}
+
+.search .last {
+    border-right: transparent;
+}
+.search{
+    margin-top: 50px;
+    margin-left: 100px;
+}
