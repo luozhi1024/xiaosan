@@ -102,6 +102,9 @@
 .menu1 .qr-code::after{
     display: block;
 }
+#logo-search{
+    height: 135px;
+}
 
 #logo-search .logo {
     float: left;
@@ -159,4 +162,51 @@
 .search{
     margin-top: 50px;
     margin-left: 100px;
+}
+#inner .category{
+    margin-left: 65px;
+}
+#inner .category li{
+    float: left;
+    line-height: 30px;
+    padding: 0px;
+
+}
+
+#inner .category .nav img{
+    width: 100px;
+    height: 30px;
+}
+#inner .category .nav a{
+    color: #333333;
+    height: 30px;
+
+}
+
+#inner .category-list .list a{
+    color: #fff;
+}
+
+#inner .category .box{
+    background: #FF0036;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    width: 240px;
+    margin-left:-50px;
+    padding: 2px 0px 2px 0px;
+}
+#inner .category .box a{
+    color: #fff;
+}
+#inner .category .box .box1{
+    background: #494949;
+    padding: 2px 0px 2px 0px;
+}
+#pic-box{
+    height: 500px;
+    background: url(img/mainpic.webp) no-repeat center;
+    position: relative;
+    z-index: -1;
+
 }
