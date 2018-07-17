@@ -1,0 +1,21 @@
+
+body {
+    margin: 0;
+}
+#mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(123, 111, 111, .5);
+}
+#content {
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+    margin: 200px auto;
+    background: #222222;
+    color: #fff;
+
+}

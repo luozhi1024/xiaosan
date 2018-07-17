@@ -1,0 +1,29 @@
+
+body{
+    margin: 0;
+}
+.parent{
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+.box{
+}
+.box1{
+    background: #ff0000;
+    -webkit-box-flex: 1;
+    height: 400px;
+    -webkit-box-ordinal-group: 1;
+}
+.box2{
+    background: #00ff00;
+    -webkit-box-flex: 2;
+    margin: 0 30px;
+    height: 300px;
+    -webkit-box-ordinal-group: 3;
+}
+.box3{
+    background: #ffff00;
+    -webkit-box-flex: 1;
+    height: 200px;
+    -webkit-box-ordinal-group: 2;
+}
