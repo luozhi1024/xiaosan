@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+}
+.parent{
+    display: flex;
+}
+.box{
+    height: 400px;
+    flex-grow: 1;
+    width: 0;
+}
+.box1{
+    background: #ff0000;
+}
+.box2{
+    background: #00ff00;
+}
+.box3{
+    background: #ffff00;
+}

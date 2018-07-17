@@ -1,0 +1,29 @@
+
+*{
+    margin: 0px;
+    padding: 0px;}
+
+#xiao{
+
+    width: 180px;
+}
+.san li{
+    width: 60px;
+    float: left;
+    list-style: none;
+}
+.san li:nth-child(3n){
+    color: #FF0036;
+
+}
+.san li:nth-child(3n-1){
+    color: #55a532;
+
+}
+.san li:nth-child(3n-2){
+    color: #0086b3;
+
+}
+
+
+
