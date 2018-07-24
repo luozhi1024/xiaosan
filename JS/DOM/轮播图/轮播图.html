@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    #container{
+        width: 640px;
+        height: 360px;
+        position: relative;
+    }
+
+    #imgs  img{
+        display: none;
+        width: 640px;
+
+    }
+#imgs .img-selected {
+        display: block;
+    }
+    .img-selected:hover{
+        background: #bd2c00;
+        color: #0086b3;
+    }
+    #file {
+     right: 10px;
+        bottom: 10px;
+        position: absolute;
+        opacity: .5;
+        z-index: 1;
+
+ }
+    #arrows{
+        left: 10px;
+        bottom: 10px;
+        position: absolute;
+        opacity: .5;
+        z-index: 1;
+    }
+    #file div , #arrows span{
+        float: left;
+        width: 20px;
+        height: 20px;
+        background: #ccc;
+        color: #0086b3;
+        cursor: pointer;
+        margin-right: 5px;
+        text-align: center;
+        line-height: 20px;
+    }
+</style>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img   src="img/1.jpg" alt="" class="img-selected">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+
+    </div>
+    <div id="file">
+        <div class="menu">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div id="arrows">
+        <span><</span>
+        <span>></span>
+    </div>
+</div>
+</body>
+</html>
