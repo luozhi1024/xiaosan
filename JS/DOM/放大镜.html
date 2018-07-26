@@ -11,13 +11,18 @@
 }
     #drag{
         position: absolute;
+        top: 0px;
+        left: 0px;
     }
     #big {
         width: 300px;
         height: 300px;
         overflow: hidden;
-
-
+        display: none;
+        position: relative;
+    }
+    #small{
+        position: relative;
     }
 
 
@@ -28,14 +33,17 @@
     #big img{
         width: 1440px;
         float: left;
+        left: 0px;
+        top: 0px ;
 
     }
     #drag {
         width: 100px;
         height: 100px;
-        background: #ffecec;
+        background: #ff0000;
         opacity: 0.4;
         filter: alpha(40);
+        display: none;
     }
 </style>
 <body>
@@ -49,7 +57,50 @@
 
 </div>
     <script>
+        var oSmall = document.getElementById("small");
+        var oDrag = document.getElementById("drag");
+        var oBig = document.getElementById("big");
+        var oImg = oBig.getElementsByTagName("img");
 
+        oSmall.onmouseover = function () {
+            oDrag.style.display = "block";
+            oBig.style.display = "block";
+
+        }
+        oSmall.onmouseout = function () {
+            oDrag.style.display = "none";
+            oBig.style.display = "none";
+
+        }
+        oSmall.onmousemove = function (ev) {
+            ev = ev || window.event;
+            var top = ev.clientY - oDrag.offsetHeight / 2;
+            var left = ev.clientX - oDrag.offsetWidth / 2;
+            if (top < 0) {
+                top = 0;
+            }
+            if (left < 0) {
+                left = 0;
+            }
+            var right = oSmall.offsetWidth - oDrag.offsetWidth;
+            var bottom = oSmall.offsetHeight - oDrag.offsetHeight;
+            if (left > right) {
+                left = right;
+            }
+            if (top > bottom) {
+                top = bottom;
+            }
+            oDrag.style.top = top + 'px';
+            oDrag.style.left = left + 'px';
+
+            var dragDansX = oDrag.offsetLeft / right;
+            var dragDansY = oDrag.offsetTop / bottom;
+            //
+            oImg.style.left = -dragDansX * (oImg.offsetWidth - oBig.offsetWidth) + 'px';
+            oImg.style.top = -dragDansY * (oImg.offsetHeight - oBig.offsetHeight) + 'px';
+
+
+        }
 
     </script>
 
