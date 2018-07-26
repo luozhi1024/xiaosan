@@ -35,6 +35,7 @@
         float: left;
         left: 0px;
         top: 0px ;
+        position: absolute;
 
     }
     #drag {
@@ -53,14 +54,14 @@
 
     </div>
 <div id="big">
-    <img src="img/5.jpg" alt="">
+    <img src="img/5.jpg" alt="" id="imgs">
 
 </div>
     <script>
         var oSmall = document.getElementById("small");
         var oDrag = document.getElementById("drag");
         var oBig = document.getElementById("big");
-        var oImg = oBig.getElementsByTagName("img");
+        var oImg = document.getElementById("imgs")
 
         oSmall.onmouseover = function () {
             oDrag.style.display = "block";
