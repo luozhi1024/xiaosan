@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    /*var oUl1 = document.getElementById('ul1');
+    oUl1.onclick = function(e){
+        // console.log(e.target);
+        // console.log(e.currentTarget === this);
+        if(e.target.tagName === 'LI'){  // tagName中标签的名字必须全是大写，
+            console.log(123);
+        }
+    };*/
+    $(function(){
+        $('#ul1').on('click', 'li',function(e){  //  绑定事件，第一个参数是事件类型，第二个参数是标签名（没有特殊要求可以省略），然后就是函数。
+            console.log(e.target);    //     target 属性可以是注册事件时的元素，或者它的子元素。通常用于比较 event.target 和 this 来确定事件是不是由于冒泡而触发的。经常用于事件冒泡时处理事件委托。
+            console.log(e.currentTarget);  //     这个属性总是等于函数的this。
+        });
+    });
+</script>
+</body>
+</html>
