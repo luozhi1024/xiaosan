@@ -1,0 +1,46 @@
+$color: #f00;
+$w: 200px;
+#div1{
+    width: $w;
+    height: $w;
+    background: $color;
+}
+.dialog{
+    width: $w;
+    &-container{
+        height: $w;
+    }
+    &-title{
+        font-size: 18px;
+        &-close{
+            float: left;
+            background: {
+                color: $color;
+                image: url(xx.jpg);
+                position: right top;
+            };
+            border: {
+                left: {
+                    color: transparent;
+                    style: solid;
+                    width: 2px;
+                }
+            }
+        }
+    }
+}
+$bg: background;
+
+#div4{
+    #{$bg}: $color;
+}
+@mixin xx($num, $c:#ccc) {
+    width: $num;
+    height: $num;
+    background: $c;
+}
+$rg: rgba(255, 0, 0, 0.5 );
+#div9{
+    width: percentage(3 / 100);
+    background: transparentize($rg, .2);
+}
