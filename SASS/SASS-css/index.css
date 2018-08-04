@@ -1,0 +1,28 @@
+#div1 {
+  width: 200px;
+  height: 200px;
+  background: #f00; }
+
+.dialog {
+  width: 200px; }
+  .dialog-container {
+    height: 200px; }
+  .dialog-title {
+    font-size: 18px; }
+    .dialog-title-close {
+      float: left;
+      background-color: #f00;
+      background-image: url(xx.jpg);
+      background-position: right top;
+      border-left-color: transparent;
+      border-left-style: solid;
+      border-left-width: 2px; }
+
+#div4 {
+  background: #f00; }
+
+#div9 {
+  width: 3%;
+  background: rgba(255, 0, 0, 0.3); }
+
+/*# sourceMappingURL=index.css.map */
