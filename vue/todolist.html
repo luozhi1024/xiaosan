@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolist</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #container{
+        width: 600px;
+        height: 100%;
+        margin: 200px auto;
+       
+    }
+    #header{
+        border-bottom: 1px solid;
+    }
+    #header h3{
+        text-align: center;
+    }
+    #main{
+        width: 600px;
+        height: 100px;
+        border-bottom: 50px;
+        
+    }
+    #main #search{
+        width: 600px;
+        height: 50px;
+    }
+    #pro li{
+        width: 600px;
+        height: 100px;
+        font-size: 20px;
+        line-height: 100px;
+        /*background: #f0f;*/
+
+    }
+    .red{
+            background: #ff0000;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="header">
+        <h3>todolist</h3>
+    </div>
+    <div id="main">
+        <div>名称：<input type="text"></div>
+        <div>价格：<input type="text"></div>
+        <div id="search"><input type="text"><button>查询</button></div>
+        
+    </div>
+    <div id="pro">
+        <ul id="list">
+        
+                        <li v-for="(item,index) in proSort"  @click="Sort" :class="{red: isRed}">
+                            <input type="checkbox" id="item.name" >
+
+                                <span>商品名称：{{item.name}}</span>
+                                <span>商品价格: {{item.price}}</span>
+                
+
+                            </li>
+                    
+        </ul>
+
+        <div id="sum"><button>删除选中</button> 总价</div>
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+     let vm = new Vue({
+            el: '#list',
+            data: {
+                clsName: 'red',
+                isRed: true,
+
+                proSort: [
+                    {
+                        name: '手机',
+                        price: 4000
+                    }, {
+                        name: '电脑',
+                        price: 8000
+                    }, {
+                        name: '耳机',
+                        price: 2000
+                    },{
+                        name: '手表',
+                        price: 1500
+                    },{
+                        name: 'ipad',
+                        price: 3000
+                    }
+                ],
+
+            },
+         methods: {
+             Sort:function(eve){
+                 eve.isRed = !eve.isRed;
+             }
+         }
+       
+    });
+
+
+
+
+</script>
+    
+</body>
+</html>
