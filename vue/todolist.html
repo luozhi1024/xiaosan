@@ -20,14 +20,14 @@
     </div>
         <form class="form-inline">
             <div class="form-group">
-                <label for="商品名称">商品名称</label>
-                <input type="text" class="form-control" id="商品名称">
+                <label for="商品名称" >商品名称</label>
+                <input v-model.trim="name" type="text" class="form-control" id="商品名称">
             </div>
             <div class="form-group">
-                <label for="商品价格">商品价格</label>
-                <input type="email" class="form-control" id="商品价格" >
+                <label for="商品价格" >商品价格</label>
+                <input v-model.number="price" type="email" class="form-control" id="商品价格" >
             </div>
-            <button type="submit" class="btn btn-default">添加</button>
+            <button type="submit" class="btn btn-default" @click="add">添加</button>
         </form>
         <br>
         <form class="form-inline">
@@ -50,16 +50,16 @@
             <tbody class="text-center">
             <tr v-for="(product,index) in proList" @click="select(product)" :class="product.isRed? 'red' : '' ">
                 <td >
-                    <input type="checkbox" id="checked">
+                    <input @click.stop type="checkbox" v-model="selectlist" :value="index">
                 </td>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                    <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" ></button>
+                    <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" @click="kill" ></button>
                 </td>
             </tr>
             <tr>
-                <td><button type="button" class="btn btn-primary btn-xs">删除选中</button></td>
+                <td><button type="button" class="btn btn-primary btn-xs" @click="deleteitem">删除选中</button></td>
                 <td colspan="3">总价：{{total}}</td>
             </tr>
 
@@ -100,12 +100,35 @@
                     price: 1500,
                     isRed:false
                 }
-            ]
+            ],
+            selectlist:[]
         },
         methods:{
             select(product){
                 product.isRed = ! product.isRed
+            },
+            deleteitem(){
+                this.proList = this.proList.filter((elem,index) => {
+                    if (!this.selectlist.includes(index)) {
+                        return elem;
+                    }
+                });
+                this.selectlist = [];
+
+            },
+            kill(index){
+                this.proList.splice(index,1)
+            },
+            add(){
+                this.proList.push({
+                    name : this.name,
+                    price : this.price,
+                    isRed : false
+
+                })
+
             }
+
         },
         computed:{
             total(){
