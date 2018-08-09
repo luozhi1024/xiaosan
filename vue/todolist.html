@@ -63,7 +63,7 @@
         <ul id="list">
         
                         <li v-for="(item,index) in proSort"  @click="Sort(item)" :class="[isRed?'red': '']">
-                            <input type="checkbox" id="checked" value="{{item}}" v-model="picked">
+                            <input type="checkbox" id="checked" value="item" v-model="picked">
                             <!--<label for="checkbox">{{item.price}}</label>-->
                                 <span>商品名称：{{item.name}}</span>
                                 <span>商品价格: {{item.price}}</span>
@@ -82,7 +82,6 @@
  new Vue({
             el: '#container',
             data: {
-
                 isRed: false,
                 picked:[],
 
