@@ -62,9 +62,9 @@
     <div id="pro">
         <ul id="list">
         
-                        <li v-for="(item,index) in proSort"  @click="Sort" :class="{red: isRed}">
-                            <input type="checkbox" id="item.name" >
-
+                        <li v-for="(item,index) in proSort"  @click="Sort(item)" :class="[isRed?'red': '']">
+                            <input type="checkbox" id="checked" value="{{item}}" v-model="picked">
+                            <!--<label for="checkbox">{{item.price}}</label>-->
                                 <span>商品名称：{{item.name}}</span>
                                 <span>商品价格: {{item.price}}</span>
                 
@@ -73,16 +73,18 @@
                     
         </ul>
 
-        <div id="sum"><button>删除选中</button> 总价</div>
+        <div id="sum"><button>删除选中</button></div>
+        <span>总价：{{picked}}</span>
     </div>
 </div>
 <script src="vue.js"></script>
 <script>
-     let vm = new Vue({
-            el: '#list',
+ new Vue({
+            el: '#container',
             data: {
-                clsName: 'red',
-                isRed: true,
+
+                isRed: false,
+                picked:[],
 
                 proSort: [
                     {
@@ -105,12 +107,12 @@
 
             },
          methods: {
-             Sort:function(eve){
-                 eve.isRed = !eve.isRed;
+             Sort(item){
+                 item.isRed = !item.isRed;
              }
          }
        
-    });
+    })
 
 
 
