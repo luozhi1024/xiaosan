@@ -55,7 +55,7 @@
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                    <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" @click="kill" ></button>
+                    <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" @click="kill(index)" ></button>
                 </td>
             </tr>
             <tr>
@@ -120,7 +120,8 @@
 
             },
             kill(index){
-                this.proList.splice(index,1)
+                this.proList.splice(index,1);
+                // console.log(index)
             },
             add(){
                 this.proList.push({
