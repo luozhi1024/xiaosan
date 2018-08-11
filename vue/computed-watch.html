@@ -13,17 +13,23 @@
 
     <button @click="count++">加1</button>
     <p>{{count}}</p>
-    <p>{{newCount}}</p>
+    <!--<p>{{newCount}}</p>-->
 </div>
 <script src="vue.js"></script>
 <script>
     new Vue({
         el:"#app",
         data:{
-            massage:"hello",
+            message:"hello",
             count:0
         },
         methods:{
+            reversedMessage() {
+                return this.message.split('').reverse().join('');
+            }
+
+        },
+        computed:{
             reversedMessage() {
                 return this.message.split('').reverse().join('');
             }
