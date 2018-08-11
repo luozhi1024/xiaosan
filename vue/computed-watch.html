@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage() }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage() }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage() }}"</p>
+
+    <button @click="count++">加1</button>
+    <p>{{count}}</p>
+    <p>{{newCount}}</p>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            massage:"hello",
+            count:0
+        },
+        methods:{
+            reversedMessage() {
+                return this.message.split('').reverse().join('');
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>
