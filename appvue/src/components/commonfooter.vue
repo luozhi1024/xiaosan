@@ -1,5 +1,5 @@
 <template>
-    <ul class="footer" :style="{background: bgColor}">
+    <ul class="footer" :style="{background: footerBgColor}">
         <li class="footer-menu" v-for="(menu, index) in menuList" :key="index">
             <router-link @click.native="selectMenu(menu)" :to="menu.path">{{menu.title}}</router-link>
         </li>
@@ -7,12 +7,13 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                bgColor: ""
-            };
+        data() 
+        {
+        //     return {
+        //         bgColor: ""
+        //     };
         },
-        props: ["menuList"],
+        props: ['menuList','footerBgColor'],
         methods: {
             selectMenu(menu) {
                 this.bgColor = menu.bgColor;
