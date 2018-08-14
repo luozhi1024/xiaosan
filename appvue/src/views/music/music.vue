@@ -5,6 +5,9 @@
 
 <script>
     export default {
+        created(){
+            this.$emit("switchtab","music")
+        }
 
     }
 </script>
