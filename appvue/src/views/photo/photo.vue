@@ -5,8 +5,11 @@
 
 <script>
     export default {
-
+created(){
+            this.$emit("switchtab","photo")
+        }
     }
+    
 </script>
 
 <style lang="scss" scoped>
