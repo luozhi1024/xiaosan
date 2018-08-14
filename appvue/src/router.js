@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import movie from '@/views/movie/movie.vue'
-import music from '@/views/music/music.vue'
-import book from '@/views/book/book.vue'
-import photo from '@/views/photo/photo.vue'
+import movie from '@/views/movie/movie.vue';
+import music from '@/views/music/music.vue';
+import book from '@/views/book/book.vue';
+import photo from '@/views/photo/photo.vue';
 
 Vue.use(Router);
 
