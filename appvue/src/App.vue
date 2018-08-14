@@ -2,7 +2,7 @@
   <div id="app">
     <commonheader :selectMenu="selectMenu"></commonheader>
     <router-view class="content" @switchtab ="switchtab"/>
-    <commonfooter :footerBgColor="selectMenu.bgColor" @changeTitle="changeTitle" :menuList="menuList"></commonfooter>
+    <commonfooter :footerBgColor="selectMenu.bgColor"  :menuList="menuList"></commonfooter>
   </div>
 </template>
 <script>
@@ -14,10 +14,10 @@
           commonheader,
           commonfooter,
       },
-      methods: {
-          changeTitle(menu){
-              this.selectMenu = menu;
-          },
+       methods: {
+          // changeTitle(menu){
+          //     this.selectMenu = menu;
+          // },
           switchtab(menuname){
               this.menuList.forEach(menu => {
                   if(menu.name == menuname){
