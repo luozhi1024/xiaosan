@@ -1,7 +1,7 @@
 <template>
 <div>
     <ul>
-        <li class="movie" v-for="movie in movieList" :key = "movie.id">
+        <li  @click="godetail(movie.id)" class="movie" v-for="movie in movieList" :key = "movie.id">
         <div class="movie-img"><img :src="movie.images.large" alt=""></div>
             <div class="movie-info">
             <div class="movie-info-title"><span>{{movie.title}}</span></div>
@@ -49,6 +49,9 @@
                     this.movieList = this.movieList.concat(getlist);
                     this.isloading = false;
                 });
+            },
+            godetail(movieId){
+                this.$router.push(`/moviedata/${movieId}`);
             }
 
         },
