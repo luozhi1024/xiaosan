@@ -43,14 +43,14 @@
         props: ["musicList"],
         data() {
             return {
-                nowIndex: -1, // 当前选中歌曲的索引
+                nowIndex: -1,
                 albumImg:
-                    "http://img3.imgtn.bdimg.com/it/u=1039246244,1205520727&fm=27&gp=0.jpg", //专辑的封面
-                albumTitle: "网易云音乐", //歌曲名称
-                albumAuthor: "网易云", //歌曲歌手
-                isPlay: false, // 是否在播放
-                toggleList: false, //歌单的是否显示
-                musicSrc: "" // 歌曲的URL
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534392590864&di=ea0b86383d4093227776b1dae2ad5c62&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160317%2Fe053fa57da1043f790a3823fec964b5b_th.jpg",
+                albumTitle: "网易云音乐",
+                albumAuthor: "网易云",
+                isPlay: false,
+                toggleList: false,
+                musicSrc: ""
             };
         },
         methods: {
@@ -107,7 +107,7 @@
             border-bottom: 0.02rem solid #343433;
             padding: 0.2rem;
             &.selected {
-                color: #299557;
+                color:#C20C0C;
             }
         }
     }
