@@ -33,12 +33,16 @@
     <div class="audio">
     <audio ref="musicAudio" @play="isPlay=true" @pause="isPlay=false" class="audio-ctrl" :src="musicSrc" autoplay controls></audio>
 </div>
+        <ul class="lrclist" ref="lrclist">
+            <li v-for="(lrc,index) in lrcList" :key="lrc.time"></li>
+        </ul>
     </div>
 
 </template>
 
 <script>
     import "@/assets/font/musicfont/iconfont.css";
+    import axios from  "axios";
     export default {
         props: ["musicList"],
         data() {
@@ -50,7 +54,8 @@
                 albumAuthor: "网易云",
                 isPlay: false,
                 toggleList: false,
-                musicSrc: ""
+                musicSrc: "",
+                lrcList:[],
             };
         },
         methods: {
@@ -74,6 +79,19 @@
                 if (this.nowIndex == this.musicList.length) {
                     this.nowIndex = 0;
                 }
+            },
+            praseLrc(text){
+                let  line = text.split("\n");
+                line.forEach(elem =>  {
+                    let time = elem.match(/(\d{2}:\d{2}：\d{2})/);
+                    let lrc = time.split([1]);
+                    if (time != null){
+
+
+                    }
+                })
+
+
             }
         },
         watch: {
