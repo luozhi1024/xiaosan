@@ -34,7 +34,10 @@
     <audio ref="musicAudio" @play="isPlay=true" @pause="isPlay=false" class="audio-ctrl" :src="musicSrc" autoplay controls></audio>
 </div>
         <ul class="lrclist" ref="lrclist">
-            <li v-for="(lrc,index) in lrcList" :key="lrc.time"></li>
+            <li :class=" lrcIndex==index?'selected': '' " v-for="(lrc,index) in lrcList" :key="lrc.time">
+                {{lrc.lrc}}
+            </li>
+
         </ul>
     </div>
 
@@ -56,6 +59,7 @@
                 toggleList: false,
                 musicSrc: "",
                 lrcList:[],
+                lrcIndex:-1,
             };
         },
         methods: {
@@ -80,14 +84,18 @@
                     this.nowIndex = 0;
                 }
             },
-            praseLrc(text){
+            parseLrc(text){
                 let  line = text.split("\n");
                 line.forEach(elem =>  {
-                    let time = elem.match(/(\d{2}:\d{2}：\d{2})/);
-                    let lrc = time.split([1]);
+                    let time = elem.match(/\[\d{2}:\d{2}.\d{2}\]/);
                     if (time != null){
-
-
+                        let lrc = elem.split(time)[1];
+                        let timeReg = time[0].match(/(\d{2}):(\d{2}).(\d{2})/);
+                        let time2Seconds  = parseInt(timeReg[1]) * 60 + parseInt(timeReg[2]) + parseInt(timeReg[3]) /1000;
+                        this.lrcList.push({
+                            time: time2Seconds ,
+                            lrc : lrc
+                        } )
                     }
                 })
 
@@ -101,8 +109,32 @@
                 this.albumTitle = nowMusic.title;
                 this.albumAuthor = nowMusic.author;
                 this.musicSrc = nowMusic.src;
+                this.lrcList = [];
+                this.lrcIndex = -1;
+                axios.get('/' + nowMusic.lrc).then(res => {
+                    this.parseLrc(res.data);
+
+                })
             }
+        },
+        mounted() {
+            let musicAudio = this.$refs.musicAudio;
+            this.$refs.musicAudio.addEventListener('timeupdate', () => {
+                let currentTime = musicAudio.currentTime;
+                this.lrcList.forEach((elem, index)=>{
+                    if(Math.ceil(elem.time) >= currentTime &&  Math.floor(elem.time) < currentTime){
+                        this.lrcIndex = index;
+                        this.$refs.lrclist.scrollTop = this.lrcIndex * 25;
+
+                    }
+                })
+
+            })
+
+
         }
+
+
     };
 
 </script>
@@ -205,6 +237,21 @@
         width: 100%;
         &-ctrl {
             width: 100%;
+        }
+    }
+    .lrclist {
+        text-align: center;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 2rem;
+        top: 3.3rem;
+        overflow-y: scroll;
+        z-index: -1;
+        padding-top: 2rem;
+        .selected {
+            color: #C20C0C;
+            font-size: 120%;
         }
     }
 </style>
