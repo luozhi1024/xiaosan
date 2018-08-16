@@ -37,7 +37,7 @@
                       path: '/movie'
                   },{
                       title: '音乐',
-                      bgColor: '#009688',
+                      bgColor: '#C20C0C',
                       name: 'music',
                       path: '/music'
                   },{
