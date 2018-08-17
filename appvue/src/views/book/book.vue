@@ -19,6 +19,7 @@ created(){
 
         }
     }
+    // 使用vue的自带组件案列
 </script>
 
 <style lang="scss" scoped>
