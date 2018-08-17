@@ -36,8 +36,8 @@ export default new Router({
             path: '/moviedata/:movieId',
             name: 'moviedata',
             component: moviedata
-        },{
-            path: '/photodetail/:idx',
+        }, {
+            path: '/photodetail/:index',
             name: 'photodetail',
             component: PhotoDetail
         }
