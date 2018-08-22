@@ -49,6 +49,7 @@
         bottom: 1rem;
         left: 0;
         right: 0;
+        z-index: -10;
     }
 </style>
 
