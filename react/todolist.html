@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
     <title>Title</title>
     <style>
         .form-inline{
@@ -44,15 +47,16 @@
     </tr>
     </thead>
     <tbody class="text-center">
-    <tr>
-        <td >
-        </td>
-        <td></td>
-        <td></td>
-        <td>
-            <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" ></button>
-        </td>
-    </tr>
+    <div id = "root"></div>
+    <!--<tr>-->
+        <!--<td >-->
+        <!--</td>-->
+        <!--<td></td>-->
+        <!--<td></td>-->
+        <!--<td>-->
+            <!--<button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" ></button>-->
+        <!--</td>-->
+    <!--</tr>-->
     <tr>
         <td><button type="button" class="btn btn-primary btn-xs" >删除选中</button></td>
         <td colspan="3">总共用时：</td>
@@ -64,5 +68,35 @@
 </table>
 
 </div>
+<script type="text/babel">
+        let proList =[
+            {
+               name : '上课',
+            },
+            {
+                name : '吃饭',
+            },
+            {
+                name : '午休',
+            },
+            {
+                name : '篮球',
+            },
+            {
+                name : '聚会',
+            },
+            {
+                name : '上课',
+            }
+        ]
+    let List = proList.map(item,index,proList=><td keys = {index}>{item}</td>)
+        ReactDOM.render(
+            <tr>
+                {List}
+            </tr>,
+        document.getElementById('root')
+        )
+
+</script>
 </body>
 </html>
