@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Title</title>
+    <style>
+        .form-inline{
+            /*width: 100%;*/
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+<form class="form-inline">
+    <div class="form-group">
+        <label for="exampleInputName2">待办事项</label>
+        <br>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="待办事项">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail2">待办时间</label>
+        <br>
+        <input type="date" class="form-control" id="exampleInputEmail2" placeholder="年/月/日">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmai3">预计用时</label>
+        <br>
+        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="预计用时">
+    </div>
+        <br>
+    <br>
+    <button type="button" class="btn btn-primary">添加</button>
+</form>
+
+<table class="table table-bordered">
+    <thead class="text-center">
+    <tr class="success" >
+        <td>待办事项</td>
+        <td>待办时间</td>
+        <td>预计用时</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody class="text-center">
+    <tr>
+        <td >
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+            <button type="button" class="btn btn-info glyphicon glyphicon-remove-sign btn-xs" ></button>
+        </td>
+    </tr>
+    <tr>
+        <td><button type="button" class="btn btn-primary btn-xs" >删除选中</button></td>
+        <td colspan="3">总共用时：</td>
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+</div>
+</body>
+</html>
