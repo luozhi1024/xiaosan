@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+        <script type="text/babel">
+            class King extends React.Components{
+                constructors(props){
+                super(props)
+                this.state {
+                    solider:100
+                }
+                }
+                render(){
+                    return(
+                        <div>
+                        <p>国王兵数：{this.state.solider}</p>    
+                        <Gengeral solider={100} ></Gengeral>
+                            
+                        </div>
+                        
+                    )
+                }
+                
+                
+            }
+            class Gengeral extends React.Component{
+                constructors(props){
+                    super(props)
+                    this.state{
+                        solider:this.props.solider
+                    }
+                }
+                render(){
+                    return(
+                        <div>
+                            <p>将军兵数： {this.state.solider}</p>
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(
+      <King/>,
+      document.getElementById("root")
+    )
+
+        </script>
+    
+</body>
+</html>
